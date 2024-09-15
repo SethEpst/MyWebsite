@@ -1,3 +1,5 @@
+
+    
     /* When the user clicks on the button, 
     toggle between hiding and showing the dropdown content */
     function dropdownBtn() {
@@ -12,4 +14,9 @@
             myDropdown.classList.remove('show');
           }
         }
+      }
+
+      // Toggles Dark Mode for page
+      function toggleDark() {
+        document.body.classList.toggle('dark');
       }
