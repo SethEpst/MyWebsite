@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <title>Seth Epstein</title>
+    <link rel="stylesheet" href="style.css" >
+    <script src="https://code.highcharts.com/highcharts.js"></script>
+    <script src="https://code.highcharts.com/modules/series-label.js"></script>
+    <script src="https://code.highcharts.com/modules/exporting.js"></script>
+    <script src="https://code.highcharts.com/modules/export-data.js"></script>
+    <script src="https://code.highcharts.com/modules/accessibility.js"></script>
+    <script src="global.js"></script>
+    <script src="graph.js"></script>
+    <body>
+    <h1>Seth Epstein</h1>
+    <br>
+    <div class="navbar">
+      <a href="index.html">Home</a>
+      <div class="dropdown">
+        <button class="dropbtn" onclick="dropdownBtn()">
+          Assignments
+          <i class="fa fa-caret-down"></i>
+        </button>
+        <div class="dropdown-content" id="myDropdown">
+          <a href="assignment1.html" alt="Assignment 1">Assignment 1</a>
+          <a href="index.html" alt="Assignment 2">Assignment 2</a>
+          <a href="assignment3.html" alt="Assignment 3">Assignment 3</a>
+          <a href="assignment4.html" alt="Assignment 4">Assignment 4</a>
+        </div>
+      </div>
+      <a class="darkbtn" id="dark" onclick="toggleDark()">Toggle Dark Mode</a>
+    </div>
+
+    <div class="text">
+        <p>This calculation is based of the Damage Reduction calculation used in the game World of Warcraft 
+        these are the formulas used to calculate the damage reduction based on the Enemy Level <br>
+        Here is a link to my <a href="https://jsfiddle.net/syntak/up2n6w4f/3/" target="_blank" rel="noopener noreferrer">JSFiddle</a></p><br>
+        <img src="images/damageReduction.png" alt="Damage Reduction Formulas"> <br>
+        Enemey Level <input id="enemyLvl" type="number" value="59" min="1" step="1" onkeypress='return event.charCode >= 48 && event.charCode <= 57' title="Numbers only"> <br>
+        <button onclick="calculate()">Calculate</button>
+        <button onclick="plot()">Plot</button><br>
+        <div id="demo"></div><br>
+        <figure class="highcharts-figure">
+            <div id="container" style="height: 600px;"></div>
+        </figure>
+    </div>
+  </body>
+</html>
