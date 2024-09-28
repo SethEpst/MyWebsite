@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <title>Seth Epstein</title>
+    <link rel="stylesheet" href="style.css" >
+    <link rel="stylesheet" href="spiro.css">
+    <script src="global.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <body>
+    <h1>Seth Epstein</h1>
+    <br>
+    <div class="navbar">
+      <a href="index.html">Home</a>
+      <div class="dropdown">
+        <button class="dropbtn" onclick="dropdownBtn()">
+          Assignments
+          <i class="fa fa-caret-down"></i>
+        </button>
+        <div class="dropdown-content" id="myDropdown">
+            <a href="assignment1.html" alt="Assignment 1">Assignment 1</a>
+            <a href="index.html" alt="Assignment 2">Assignment 2</a>
+            <a href="assignment3.html" alt="Assignment 3">Assignment 3</a>
+            <a href="assignment4.html" alt="Assignment 4">Assignment 4</a>
+            <a href="assignment5.html" alt="Assignment 4">Assignment 5</a>
+        </div>
+      </div>
+      <a class="darkbtn" id="dark" onclick="toggleDark()">Toggle Dark Mode</a>
+    </div>
+
+    <div>
+        <div id="main">
+            <div id="equation">
+              <h2>Spirograph</h2>
+              <p> x = (R - r) cos(t) + p cos(R-r/r)t</p>
+              <p> y = (R - r) sin(t) - p sin(R-r/r)t</p>
+              <p>(R = 250)</p>
+              
+              <p class="tooltip">r = 
+                <input id="r" type="text" size="5" value="135" />
+                <span class="tooltiptext">required:( r &lt; R )</span>
+              </p>
+                
+              <p class="tooltip">&rho; =
+                <input id="p" type="text" size="5" value="75" />
+                <span class="tooltiptext">required:( &rho; &lt;r )</span>
+              </p>
+              
+              <p class="tooltip">(Color =)
+                <input id="color" type="text" value="" size="5" />
+                <span class="tooltiptext">leave blank for random color</span>
+              </p>
+              
+            </div>
+            <canvas id="myCanvas" width="500" height="500" style="border:1px solid #d3d3d3;">Your browser does not support the HTML5 canvas tag.</canvas><br />
+            <div class="button">
+            <button onclick="startDrawing();">Start Drawing</button>
+            <button onclick="stopDrawing();">Stop Drawing</button>
+            <button onclick="clearCanvas();">Clear Canvas</button>
+            </div>
+          </div>
+    </div>
+  </body>
+
+  <script src="spiro.js"></script>
+</html>
