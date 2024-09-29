@@ -1,87 +1,56 @@
+var R = Math.floor(Math.random() * Math.floor(100))
 var c = document.getElementById("myCanvas");
+var r = Math.floor(Math.random() * Math.floor(70))
+var O = Math.floor(Math.random() * Math.floor(100))
 var ctx = c.getContext("2d");
-var x = 0;
-var y = 0;
-var R = c.width/2;
-var r = 0;
-var t = 0;
-var p = 0;
-var timesRun =0;
+var interval;
+var timesRun = 0;
 
-// Start Drawing
-function startDrawing() {
-  t = 0;
-  r = $("#r").val();
-  p = $("#p").val();
-  
-  validate();
-  if (timesRun != 0) {
-    clearCanvas();
-  };
-  
-  // Create a random color
-  timesRun = 0;
-  var color = '#' + $("#color").val();
+function doDrawing() {
+    t = 0;
+    validate();
+    if (timesRun != 0) {
+        clearCanvas();
+      };
+    ctx.clear();
+    
+    var timesRun = 0;
+    var color = '#' + $("#color").val();
 
-  if (color == "#") {
-    color = '#'+Math.floor(Math.random()*16777215).toString(16);
-  }
-
-  // Initial x and y
-  x = R + (R-r)*Math.cos(t) + p*Math.cos(((R-r)/r)*t); // add R to set 0,0 in the middle of the canvas
-  y = R + (R-r)*Math.sin(t) - p*Math.sin(((R-r)/r)*t); // add R to set 0,0 in the middle of the canvas
-
-  // Start the Drawing
-  
-  ctx.beginPath();
-  ctx.strokeStyle = color;
-  ctx.moveTo(x,y);
-
-  var xStart = x;
-  var yStart = y;
-
-  // Use the timer to create drawing
-  interval = setInterval(function() {
-    timesRun += 1;
-    if(timesRun > 1 && x.toFixed(6) == xStart && y.toFixed(6) == yStart) {
-      clearInterval(interval);
+    if (color == "#") {
+      color = '#'+Math.floor(Math.random()*16777215).toString(16);
     }
+    
 
-    drawSpirograph();
-  }, 5); 
+  var xCenter = c.width/2;
+  var yCenter = c.height/2;
+  let x = xCenter + Math.floor((R+r)*Math.cos(t) - (r+O)*Math.cos(((R+r)/r)*t));
+  let y = yCenter + Math.floor((R+r)*Math.sin(t) - (r+O)*Math.sin(((R+r)/r)*t));
+
+        
+    ctx.beginPath();
+    ctx.strokeStyle = color;
+    ctx.moveTo(x,y);
+
+    interval = setInterval(function(){
+    timesRun += 1;
+    if(timesRun === 1080){
+        clearInterval(interval); }
+        
+    drawCircle(R);}, 20); 
     
 }
-
-// Draw Spirograph
-function drawSpirograph() {
-  t += Math.PI/50;
-  x = R + (R-r)*Math.cos(t) + p*Math.cos(((R-r)/r)*t); // add R to set 0,0 in the middle of the canvas
-  y = R + (R-r)*Math.sin(t) - p*Math.sin(((R-r)/r)*t); // add R to set 0,0 in the middle of the canvas
-
+function drawCircle() { 
+  t += 0.1;
+  var xCenter = c.width/2;
+  var yCenter = c.height/2;
+  let x = xCenter + Math.floor((R+r)*Math.cos(t) - (r+O)*Math.cos(((R+r)/r)*t));
+  let y = yCenter + Math.floor((R+r)*Math.sin(t) - (r+O)*Math.sin(((R+r)/r)*t));
+	
   ctx.lineTo(x,y);  
   ctx.stroke();
 }
 
-// Validate Input Fields
-function validate() {
-	if (+r >= +R) {
-  	alert("r must be less than R");
-    exit;
-  }
-
-  if (+p >= +r) {
-  	alert("p must be less than r");
-    exit;
-  }
-  
-  var regex = /^[0-9a-fA-F]{6}$/;
-  if (regex.test($(color).val()) == false && $(color).val() != "") {
-  alert("color must be 6 digit hex number");
-  exit;
-  }
-}
-
-// Stop Drawing
 function stopDrawing() {
 	clearInterval(interval);
 }
@@ -90,6 +59,22 @@ function stopDrawing() {
 function clearCanvas() {
     clearInterval(interval);
     ctx.clear();
+}
+
+function randomize() {
+    clearInterval(interval);
+    ctx.clear();
+    O = Math.floor(Math.random() * Math.floor(100))
+    r = Math.floor(Math.random() * Math.floor(70))
+    R = Math.floor(Math.random() * Math.floor(100))
+}
+
+function validate() {
+  var regex = /^[0-9a-fA-F]{6}$/;
+  if (regex.test($(color).val()) == false && $(color).val() != "") {
+  alert("color must be 6 digit hex number");
+  exit;
+  }
 }
 
 CanvasRenderingContext2D.prototype.clear = 
