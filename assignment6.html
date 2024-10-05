@@ -4,9 +4,9 @@
   <head>
     <title>Seth Epstein</title>
     <link rel="stylesheet" href="style.css" >
-    <link rel="stylesheet" href="spiro.css">
-    <script src="global.js"></script>
+    <link rel="stylesheet" href="json.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="global.js"></script>
     <body>
     <h1>Seth Epstein</h1>
     <br>
@@ -28,31 +28,15 @@
       </div>
       <a class="darkbtn" id="dark" onclick="toggleDark()">Toggle Dark Mode</a>
     </div>
-
-    <div>
-        <div id="main">
-            <div id="equation">
-              <h2>Spirograph</h2>
-              <p> x = (R + r) cos(t) - (r + O)cos((R + r) / r) t</p>
-              <p> y = (R + r) sin(t) - (r + O)cos((R + r) / r) t</p>
-        
-              
-              <p class="tooltip">(Color =)
-                <input id="color" type="text" value="" size="5" />
-                <span class="tooltiptext">leave blank for random color</span>
-              </p>
-              <button onclick="randomize();">Randomize Values</button>
-              
-            </div>
-            <canvas id="myCanvas" width="500" height="500" style="border:1px solid #d3d3d3;">Your browser does not support the HTML5 canvas tag.</canvas><br />
-            <div class="button">
-            <button onclick="doDrawing();">Start Drawing</button>
-            <button onclick="stopDrawing();">Stop Drawing</button>
-            <button onclick="clearCanvas();">Clear Canvas</button>
-            </div>
-          </div>
+    <div class="json">
+    <span>JSON:</span>
+    Kel'Thuzad 40 Man Loot Table
+    <pre id="json"></pre>
+    <input type="button" id="btnConvert" value="Convert To Table" />    
+    <div class="text-home">
+    </div>
     </div>
   </body>
 
-  <script src="spiro.js"></script>
+  <script src="json.js"></script>
 </html>

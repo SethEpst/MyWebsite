@@ -1,0 +1,43 @@
+body {
+    font-family: calibri;
+  }
+  
+  span {
+    font-weight: bold;
+    margin-bottom: 5px;
+    font-size: 18px;
+    text-decoration: underline;
+    color: blue;
+  }
+  
+  pre {
+    white-space: normal;
+  }
+
+  table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+    margin-top:10px;
+    color: black;
+  }
+  
+  td,
+  th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+  }
+  
+  th {
+    background-color: #ccd;
+  }
+  
+  tr:nth-child(even) {
+    background-color: #ecf6fc;
+  }
+  
+  tr:nth-child(odd) {
+    background-color: #ddeedd;
+  }
+  
