@@ -21,7 +21,7 @@ $('#btnConvert').click(function() {
 ConvertToTable(jData);
 });
 
-function ConvertToTable(jData) {
+function createTable() {
 var arrJSON = typeof jData != 'object' ? JSON.parse(jData) : jData;
 var $table = $('<table/>');
 var $headerTr = $('<tr/>');
