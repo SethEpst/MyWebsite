@@ -5,11 +5,6 @@ $(document).ready(function() {
   "Type": "Communication Core",
   "Course": "ENC1101",
   "Name": "Introduction to Composition",
-  }, {
-      "Type" : "Mathematics Core", 
-    "Course": "MGF2106",
-    "Name": "Survey in Mathematics",
-    "OtherCourses" : ["MAC1105"]
   },{
       "Type" : "Mathematics Core", 
     "Course": "MAC1105",
