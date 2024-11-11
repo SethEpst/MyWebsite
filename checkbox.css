@@ -1,0 +1,17 @@
+input:enabled + label {
+    margin: 20px auto;
+    background: rgb(255, 255, 0);
+    color: black;
+  }
+  
+  input:disabled + label {
+    opacity: 0.5;
+    background: rgb(255, 0, 0);
+    color: black;
+  }
+  
+  input[type="checkbox"]:checked + label {
+    background: rgb(153, 204, 102);
+    font-weight: bold;
+    color: black;
+  }
