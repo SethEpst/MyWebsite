@@ -190,3 +190,7 @@ select {
   .highcharts-figure {
     width: 100%;
   }
+
+  .link {
+    color: gray;
+  }
