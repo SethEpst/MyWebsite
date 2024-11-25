@@ -93,6 +93,13 @@ h1 {
   width: 100%;
 }
 
+.smallCenter {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 10%;
+}
+
 /*Dark Mode for My Eyes*/
 body {
   background-color: var(--primary-page-bg);

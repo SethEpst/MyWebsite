@@ -4,13 +4,7 @@
   <head>
     <title>Seth Epstein</title>
     <link rel="stylesheet" href="style.css" >
-    <script src="https://code.highcharts.com/highcharts.js"></script>
-    <script src="https://code.highcharts.com/modules/series-label.js"></script>
-    <script src="https://code.highcharts.com/modules/exporting.js"></script>
-    <script src="https://code.highcharts.com/modules/export-data.js"></script>
-    <script src="https://code.highcharts.com/modules/accessibility.js"></script>
     <script src="global.js"></script>
-    <script src="graph.js"></script>
     <body>
     <h1>Seth Epstein</h1>
     <br>
@@ -39,17 +33,25 @@
     </div>
 
     <div class="text">
-        <p>This calculation is based off the Damage Reduction calculation used in the game World of Warcraft. 
-        These are the formulas used to calculate the damage reduction based on the Enemy Level. <br>
-        Here is a link to my <a href="https://jsfiddle.net/syntak/up2n6w4f/3/" target="_blank" rel="noopener noreferrer">JSFiddle</a></p><br>
-        <img src="images/damageReduction.png" alt="Damage Reduction Formulas"> <br>
-        Enemy Level <input id="enemyLvl" type="number" value="59" min="1" step="1" onkeypress='return event.charCode >= 48 && event.charCode <= 57' title="Numbers only"> <br>
-        <button onclick="calculate()">Calculate</button>
-        <button onclick="plot()">Plot</button><br>
-        <div id="demo"></div><br>
-        <figure class="highcharts-figure">
-            <div id="container" style="height: 600px;"></div>
-        </figure>
+        <p>
+            <h1>Assignment 13</h1>
+            Space LumberJack <br><br>
+            Goal: The player must survive for 2 minutes to beat the game. <br><br>
+            Movement - Player position is manipulated with WASD keys: <br><br>
+            <img src="images/proto1.jpg" alt="control diagram" class="Center"/><br>
+            Mechanics: <br>
+            The player can be hit 5 times before being killed. When they are hit, they will be knocked back. If the play hits an enemy with more than 1 Hit Points, it will be knocked back. <br><br>
+            Enemies: <br>
+            <img src="images/proto4.png" alt="small enemy" class="smallCenter"/><br>
+            An enemy that takes one shot to kill. This enemy moves fast. <br>
+            <img src="images/proto3.png" alt="regular enemy" class="smallCenter"><br>
+            An enemy that takes two shots to kill. This enemy moves slower than the enemy above. These enemies have a chance to drop a weapon upgrade (shoot more projectiles): <br>
+            <img src="images/proto6.png" alt="upgrade" class="smallCenter"><br>
+            or a healing item: <br>
+            <img src="images/proto5.png" alt="health" class="smallCenter">
+        </p>
     </div>
   </body>
+
+
 </html>
